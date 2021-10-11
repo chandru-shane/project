@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
- <style>
+ {% comment %} <style>
  .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -12,7 +12,7 @@
     font-size: 30px;
     text-align: center;
   }
- </style>
+ </style> {% endcomment %}
 <div class='row'>
 <div class='card mb-3 grid-container'>
 {% for product in products  %}
