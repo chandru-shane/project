@@ -7,3 +7,8 @@ from .models import Product
 def home(request):
     products = Product.objects.all()
     return render(request,'products/home.html',context={'products':products})
+
+@login_required
+def detail_view(request, product):
+    product = Product.objects.get(id=product)
+    return render(request, 'products/detail_page.html', context={'product':product})

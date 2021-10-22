@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class='cart'>
+     <h3>Buy Now</h3>
+    
+   
+             <img style="width: 200px; height: 200px; " src={{ product.product_image.url }} />
+
+         <h5>{{ product.name }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+       {% if product.discount %}
+        
+        <strike> <h4> <small class="text-muted">Price: ₹ {{ product.price}}</small></h4></strike>
+        <h4 > <small  class="text-muted">Discount Price: ₹ {{ product.discount }}</small></h4>
+        {% else %}
+        <h4 > <small class="text-muted" >Price: ₹ {{ product.price}}</small></h4>
+        {% endif %}
+
+        <a class="btn btn-success">Place Order</a>
+     </div>   
+    </div>
+</div>
+{% endblock content %}

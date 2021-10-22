@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Cart Summary</h1>
+      <h4 >Quantity: {{ cart_summary.items }}</h4>
+      <h4 >Total amount of cart items: {{ cart_summary.items }}</h4>
+      <button type="button" class="btn btn-success">Checkout all</button>
+    </div>
+  </div>
+  <h2>Items</h2>
+<table>
+    
+  <thead class="table">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Disount</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+      <th scope=""></th>
+      <th scope=""></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cart in carts%}
+
+        <tr style="justify-content: space-between;">
+            <td>{{cart.product.name}}</td>
+            <td>{{cart.product.price}}</td>
+            <td>{{cart.product.discount}}</td>
+            <td>{{cart.quantity}}</td>
+            <td>{{ cart.original_total }}</td>
+            <td><button type='button' class='btn btn-warning'>Remove</button></td>
+            <td> <button type='button' class='btn btn-success'>Checkout</button></td>
+
+        </tr>
+
+
+
+{% endfor %}
+</tbody>
+</table>
+{% endblock content %}

@@ -18,6 +18,8 @@
 {% for product in products  %}
 <div class='grid-item '>
 <div class="card " style="width: 18rem;">
+   <a href={% url 'detail-view' product.id %}>
+    <div>
     <img src={{ product.product_image.url }} class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
@@ -28,12 +30,13 @@
         <h4 > <small  class="text-muted">Discount Price: ₹ {{ product.discount }}</small></h4>
         {% else %}
         <h4 > <small class="text-muted" >Price: ₹ {{ product.price}}</small></h4>
-        {% endif %}
+        {% endif %}</div>
+   </a>
 
       <div class='product-button' >
 
-        <a href="#" class="btn btn-warning">Cart</a>
-        <a href="#" class="btn btn-success">Buy</a>
+        <a href="{% url 'add-cart' product.id %}" class="btn btn-warning">Cart</a>
+        <a href="{% url 'buy-now' product.id %}" class="btn btn-success">Buy</a>
       </div>
     </div>
   </div>

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'crispy_forms',
     'users.apps.UsersConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,7 @@ MEDIA_URL = '/media/'
 
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+LOGIN_URL = 'login'
+
+LOGIN_REDIRECT_URL  = '/'
