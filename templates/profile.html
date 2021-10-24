@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class='card'>
+<h4><b>Username: </b>{{ profile.user.username }}</h4>
+<h4><b>Email: </b>{{ profile.user.username }}</h4>
+<h4><b>Phone: </b>{{ profile.phone }}</h4>
+<h4><b>Address: </b>{{ profile.address }}</h4>
+<h4><b>Pincode: </b>{{profile.pincode}}</h4>
+<div class='profile-edit-container'>
+<a type='button' href="{% url 'profile-update' %}" class='btn btn-warning'>Edit</a>
+</div>
+</div>
+
+{% endblock content %}
+
+

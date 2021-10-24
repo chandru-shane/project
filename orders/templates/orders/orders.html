@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% for order in orders %}
+<div class='card'>
+<h4>Status: {{order.get_status_display }}</h4>
+<h6>Items</h6>
+<ul>
+{% for product in order.products.all %}
+<li>{{product.name}}</li>
+{% endfor %}
+</ul>
+<h4>total: {{order.total}}
+</div>
+</br>
+{% endfor %}
+{% endblock content %}

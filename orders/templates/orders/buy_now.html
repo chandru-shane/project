@@ -18,7 +18,7 @@
         <h4 > <small class="text-muted" >Price: ₹ {{ product.price}}</small></h4>
         {% endif %}
 
-        <a class="btn btn-success">Place Order</a>
+        <a href="{% url 'confirm-buy' product.id %}" class="btn btn-success">Place Order</a>
      </div>   
     </div>
 </div>

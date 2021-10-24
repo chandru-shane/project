@@ -6,7 +6,7 @@
       <h1 class="display-4">Cart Summary</h1>
       <h4 >Quantity: {{ cart_summary.items }}</h4>
       <h4 >Total amount of cart items: {{ cart_summary.items }}</h4>
-      <button type="button" class="btn btn-success">Checkout all</button>
+      <a href="{% url 'checkout-all' %}" type="button" class="btn btn-success">Checkout all</a>
     </div>
   </div>
   <h2>Items</h2>
@@ -32,9 +32,8 @@
             <td>{{cart.product.discount}}</td>
             <td>{{cart.quantity}}</td>
             <td>{{ cart.original_total }}</td>
-            <td><button type='button' class='btn btn-warning'>Remove</button></td>
-            <td> <button type='button' class='btn btn-success'>Checkout</button></td>
-
+            <td><a type='button' href="{% url 'delete-cart' cart.id %}"class='btn btn-danger'>Delete</a></td>
+            <td> <a type='button' href="{% url 'single-checkout' cart.id %}" class='btn btn-success'>Checkout</a></td>
         </tr>
 
 
